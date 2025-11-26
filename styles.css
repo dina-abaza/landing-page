@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box; 
   }
-/* Page background */
+
 body {
     margin: 0;
     background: rgba(12, 18, 32, 1);
@@ -13,7 +13,9 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
+.container{
+  max-width: 100rem;
+}
 
 /* NAVBAR */
 #menu-btn {
@@ -31,19 +33,22 @@ html {
   max-width: 100rem;
   height: 6.25rem;
   padding: 1.25rem 0;
-  background: rgba(12, 18, 32, 0.6); /* خليها نصف شفافة */
-  z-index: 999; /* دايمًا فوق باقي العناصر */
-  backdrop-filter: blur(5px); /* يعطي تأثير الضبابية للمحتوى اللي وراه */
+  background: rgba(12, 18, 32, 0.6); 
+  z-index: 999; 
+  backdrop-filter: blur(5px);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 
-.container {
+.container-nav {
     width: 90%;
     max-width: 118.75rem;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 /* Logo (icon + text) */
@@ -100,27 +105,27 @@ html {
     text-decoration: none;
     font-size: 1.125rem;
 }
-/* السكشن الرئيسي */
+/* Main Hero Section */
 .hero-section {
     width: 100%;
     padding: 5rem 0;
     margin-top: 5rem;
- 
-
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* الكونتينر الأساسي */
+/* Main Container */
 .hero-container {
     width: 90%;
     max-width: 100rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 3.125rem;
 }
 
-/* النصوص */
+/* Text Content */
 .hero-text {
     flex: 1;
 }
@@ -156,10 +161,11 @@ html {
     margin-bottom: 2.5rem;
 }
 
-/* الزرارين */
+/* Buttons */
 .hero-buttons {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.6875rem;
 }
 
@@ -184,7 +190,7 @@ html {
   color: white;
 }
 
-/* الصورة */
+/* Image */
 .hero-image {
     flex: 1;
     display: flex;
@@ -205,7 +211,8 @@ html {
     padding: 2rem 0;
     background: rgba(12, 18, 32, 1);
     color: white;
-
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .why-container {
@@ -224,15 +231,15 @@ html {
 .cards {
     display: flex;
     max-width: 100rem;
-    gap: 1.125rem; /* المسافة بين المربعات */
+    gap: 1.125rem; /* Spacing between cards */
     justify-content: center;
-    align-items: stretch; /* يجعل الكروت متساوية في الارتفاع */
+    align-items: stretch; /* Makes cards equal in height */
 }
 
 .card {
-    flex: 1; /* يجعل الكروت متساوية في العرض */
+    flex: 1; /* Makes cards equal in width */
     max-width: 32rem;
-    min-width: 0; /* يسمح للكروت بالانكماش */
+    min-width: 0; /* Allows cards to shrink */
     height: 21.75rem;
     background: rgba(20, 31, 55, 1);
     border: 1px solid rgba(43, 52, 75, 1);
@@ -241,7 +248,7 @@ html {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* الأيقونة على الشمال */
+    align-items: center; /* Center content */
     color: white;
 }
 
@@ -254,7 +261,7 @@ html {
 .card-title {
     font-size: 2.25rem;
     font-weight: 700;
-    text-align: left;
+    text-align: center;
     width: 100%;
     margin-bottom: 0.3125rem;
     min-height: 3.2rem;
@@ -264,7 +271,7 @@ html {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.3;
-    text-align: left;
+    text-align: center;
     width: 100%;
     max-width: 371px;
     min-height: 4.5rem;
@@ -273,7 +280,6 @@ html {
   
   .features-section {
     width: 100%;
-    max-width: 100rem;
     text-align: center;
     padding: 2rem 0;
     margin-left: auto; 
@@ -302,19 +308,19 @@ html {
     padding-bottom: 3rem;
   }
   
-  /* الخطوط الداخلية فقط */
+  /* Internal borders only */
   .grid-features > div {
     padding: 1.875rem 1.5625rem;
     border-right: 0.03125rem solid rgba(43, 52, 75, 1);
     border-bottom: 0.03125rem solid rgba(43, 52, 75, 1);
   }
   
-  /* إزالة آخر عمود */
+  /* Remove last column border */
   .grid-features > div:nth-child(3n) {
     border-right: none;
   }
   
-  /* إزالة آخر صف */
+  /* Remove last row border */
   .grid-features > div:nth-last-child(-n+3) {
     border-bottom: none;
   }
@@ -325,7 +331,7 @@ html {
 
 
   .feature-card {
-    text-align: left;
+    text-align: center;
   }
   
   .feature-card .icon-feature {
@@ -385,7 +391,7 @@ html {
   .compare-titles{
     margin-right: auto;
     margin-left: auto;
-   text-align: left;
+   text-align: center;
   }
   .compare-small-title {
     font-weight: 400;
@@ -404,7 +410,8 @@ html {
   }
   .compare-content {
     display: flex;
-    align-items: stretch; /* يخلي الأعمدة مساوية للصورة */
+    align-items: stretch; /* Makes columns equal to image height */
+    justify-content: center;
     gap: 2rem;
   
   }
@@ -438,13 +445,13 @@ html {
     display: flex;
     flex-direction: column; 
     gap: 0.5rem;
-    align-items: flex-start;
+    align-items: center;
   }
   
   .compare-item h3 {
     display: flex;
-    align-items: center; /* ✔ جنب العنوان الكبير */
-    gap: 0.625rem; /* المسافة بين العلامة والعنوان الكبير */
+    align-items: center; /* Checkmark next to title */
+    gap: 0.625rem; /* Spacing between checkmark and title */
     margin: 0;
     font-size: 2.25rem;
     font-weight: 700;
@@ -489,7 +496,7 @@ html {
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
-    background: #0c1220; /* نفس خلفية باقي السكاشنز */
+    background: #0c1220; /* Same background as other sections */
   }
   .table-title{
     max-width: 33.75rem;
@@ -522,7 +529,7 @@ html {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* تبدأ من الشمال */
+    justify-content: flex-start; /* Start from left */
     padding-left: 1rem;
     font-size: 1.5rem;
     font-weight: 700;
@@ -540,7 +547,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start; /* كل العناصر تبدأ من الشمال */
+    align-items: flex-start; /* All elements start from left */
     padding: 1rem;
     gap: 0.75rem;
     color: #fff;
@@ -553,7 +560,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start; /* كل العناصر تبدأ من الشمال */
+    align-items: flex-start; /* All elements start from left */
     padding: 1rem;
     gap: 0.75rem;
 
@@ -561,7 +568,7 @@ html {
     border-right: 1px solid rgba(74, 86, 119, 1);
  }
   .table-column:last-child {
-    border-right: none; /* آخر عمود ما يكونش عنده خط */
+    border-right: none; /* Last column has no border */
   }
   .faq-section {
     width: 100%;
@@ -571,11 +578,11 @@ html {
   }
   
   .faq-container {
-    width: 1056px; /* أقصى عرض */
+    width: 1056px; /* Maximum width */
   }
   
   .faq-title {
-    font-size: 3rem; /* حوالي 48px */
+    font-size: 3rem; /* Approximately 48px */
     font-weight: 700;
     color: white;
     margin-bottom: 2rem;
@@ -588,8 +595,8 @@ html {
     background: rgba(20, 31, 55, 1);
     border: 1px solid rgba(43, 52, 75, 1);
     display: flex;
-    flex-direction: column; /* عمودياً */
-    justify-content: space-around; /* توزيع الديفات بالتساوي */
+    flex-direction: column; /* Vertically */
+    justify-content: space-around; /* Distribute divs evenly */
     padding: 1.5rem;
     box-sizing: border-box;
   }
@@ -597,11 +604,11 @@ html {
   .faq-item {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* المسافة بين العنوان والفقرة */
+    gap: 0.5rem; /* Spacing between title and paragraph */
   }
   
   .faq-item h3 {
-    font-size: 2.25rem; /* حوالي 30px */
+    font-size: 2.25rem; /* Approximately 30px */
     font-weight: 700;
     font-style: bold;
     color: white;
@@ -609,7 +616,7 @@ html {
   }
   
   .faq-item p {
-    font-size:1.5rem ; /* حوالي 20px */
+    font-size:1.5rem ; /* Approximately 20px */
     color: rgba(200,200,200,1);
     margin: 0;
     font-weight: 400;
@@ -635,7 +642,7 @@ html {
   }
 
 
-  /* تأثير hover لجميع الأزرار */
+  /* Hover effect for all buttons */
 .btn, .btn-primary, .secondary-btn, .demo-btn {
   transition: all 0.3s ease; /* حركة ناعمة */
 }
@@ -668,9 +675,8 @@ html {
     padding: 1rem 0;
   }
   
-  .container {
-    flex-wrap: wrap;
-    gap: 1rem;
+  .container-nav {
+    width: 95%;
   }
   
   .logo-text h1 {
@@ -902,43 +908,50 @@ html {
   }
   
   /* Navbar */
-  .nav-right {
-    display: none; /* مخفية في البداية */
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-  }
-
-  #menu-btn:checked ~ .nav-right {
-    display: flex; /* تظهر لما نضغط */
-  }
-
-  .menu-label {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
-    z-index: 2000;
-    font-size: 2rem;
-    color: white;
-  }
   .navbar {
     height: auto;
     padding: 0.75rem 0;
   }
   
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+  .container-nav {
+    width: 95%;
+    flex-wrap: wrap;
+  }
+  
+  .menu-label {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2000;
+    font-size: 2rem;
+    color: white;
+    background: rgba(12, 18, 32, 0.8);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
   }
   
   .nav-right {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
+    background: rgba(12, 18, 32, 0.95);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  #menu-btn:checked ~ .nav-right {
+    display: flex;
   }
   
   .nav-links {
@@ -946,16 +959,37 @@ html {
     width: 100%;
     gap: 0.75rem;
     padding: 0;
+    margin: 0;
   }
   
   .nav-links a {
     font-size: 1.125rem;
+    padding: 0.5rem 0;
+    display: block;
+    width: 100%;
   }
   
   .demo-btn {
     width: 100%;
     text-align: center;
     padding: 0.875rem 1.25rem;
+  }
+  
+  .logo-group {
+    flex: 1;
+  }
+  
+  .logo-text h1 {
+    font-size: 1.75rem;
+  }
+  
+  .logo-text p {
+    font-size: 0.75rem;
+  }
+  
+  .logo-icon {
+    width: 2rem;
+    height: 2.5rem;
   }
   
   /* Hero Section */
@@ -1319,18 +1353,35 @@ html {
 @media (max-width: 480px) {
 
   /* Navbar */
-
-  /* show nave */
+  .navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .container-nav {
+    width: 95%;
+  }
+  
+  .menu-label {
+    right: 0.5rem;
+    font-size: 1.75rem;
+    padding: 0.4rem;
+  }
+  
   #menu-btn:checked ~ .nav-right {
     display: flex; 
   }
-    
-    .menu-label{
-      display: block;
-      position: absolute;
-      right: 30px;
-      top: 30px ;
-      z-index: 2000 ;
+  
+  .logo-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .logo-text p {
+    font-size: 0.7rem;
+  }
+  
+  .logo-icon {
+    width: 1.75rem;
+    height: 2.25rem;
   }
 
   .logo-icon {
