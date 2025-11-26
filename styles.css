@@ -28,6 +28,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100rem;
   height: 6.25rem;
   padding: 1.25rem 0;
   background: rgba(12, 18, 32, 0.6); /* خليها نصف شفافة */
@@ -285,7 +286,7 @@ html {
     margin: 0 auto;
     text-align: center;
 }
-  .title-features {
+.title-features {
     font-size: 3rem;
     margin-bottom: 3.75rem;
     font-weight: 700;
@@ -297,7 +298,8 @@ html {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background: rgba(20, 31, 55, 1);
-
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   
   /* الخطوط الداخلية فقط */
@@ -380,23 +382,26 @@ html {
     flex-direction: column;
     align-items: center;
   }
-  
+  .compare-titles{
+    margin-right: auto;
+    margin-left: auto;
+   text-align: left;
+  }
   .compare-small-title {
-    max-width:35rem ;
     font-weight: 400;
     color: rgba(169, 233, 245, 1);
     margin-bottom: 0; 
   }
   
   .compare-big-title {
-    text-align: center;
-    max-width:40.625rem ;
     font-size:3rem;
     font-weight: 700;
     margin-top: 0.25rem;
     color: rgba(255, 255, 255, 1);
   }
-  
+  .compare-title-span{
+    display: block;
+  }
   .compare-content {
     display: flex;
     align-items: stretch; /* يخلي الأعمدة مساوية للصورة */
@@ -613,7 +618,7 @@ html {
   .footer {
     width: 90%;
     max-width: 78.6875rem;       /* 1259px ÷ 16 */
-    height: 3.3125rem; 
+    height: auto; 
     margin: 0 auto;
     font-weight: 400;
     font-style: regular;       /* Regular */
@@ -625,7 +630,8 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4rem; 
+    padding-top: 2rem;
+    padding-bottom: 4rem !important;
   }
 
 
@@ -876,6 +882,12 @@ html {
     height: auto;
     min-height: 479px;
   }
+}
+.footer {
+  width: 95%;
+  font-size: 1rem;
+  height: auto;
+  /* لا تلمسي الـ padding-bottom هنا */
 }
 
 /* ============================================
@@ -1295,11 +1307,10 @@ html {
   /* Footer */
   .footer {
     width: 95%;
-    padding: 2rem 1rem;
     font-size: 1rem;
     height: auto;
-    line-height: 150%;
-  }
+    /* لا تلمسي الـ padding-bottom هنا */
+}
 }
 
 /* ============================================
@@ -1468,7 +1479,10 @@ html {
   
   /* Footer */
   .footer {
-    font-size: 0.875rem;
-  }
+    width: 95%;
+    font-size: 1rem;
+    height: auto;
+    /* لا تلمسي الـ padding-bottom هنا */
+}
 }
   
