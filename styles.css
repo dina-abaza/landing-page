@@ -17,11 +17,17 @@ html {
 
 /* NAVBAR */
 .navbar {
-    width: 100%;
-    height: 6.25rem;
-    padding: 1.25rem 0;
-    background: rgba(12, 18, 32, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6.25rem;
+  padding: 1.25rem 0;
+  background: rgba(12, 18, 32, 0.6); /* خليها نصف شفافة */
+  z-index: 999; /* دايمًا فوق باقي العناصر */
+  backdrop-filter: blur(5px); /* يعطي تأثير الضبابية للمحتوى اللي وراه */
 }
+
 
 .container {
     width: 90%;
@@ -60,12 +66,12 @@ html {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 2.5rem; /* المسافة بين الروابط والزر */
+    gap: 2.5rem; 
 }
 /* Center nav links */
 .nav-links {
     display: flex;
-    gap: 1.875rem; /* المسافة بين كل رابط */
+    gap: 1.875rem; 
     list-style: none;
 }
 
@@ -74,24 +80,25 @@ html {
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 400;
+    font-style: regular;
 }
 
 /* Right button */
 .demo-btn {
     background: rgba(85, 191, 214, 1);
-    padding: 0.875rem 1.5625rem;
-    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
     color: #000;
     text-decoration: none;
-    font-weight: 600;
     font-size: 1.125rem;
 }
 /* السكشن الرئيسي */
 .hero-section {
     width: 100%;
     padding: 5rem 0;
-    margin-top: 1.25rem;
-    padding: 2rem 0;  /* مسافة تحت الناف */
+    margin-top: 5rem;
+    padding: 2rem 0; 
+
 }
 
 /* الكونتينر الأساسي */
@@ -113,8 +120,10 @@ html {
 .small-title {
     width: 35rem;
     font-size: 1.25rem;
-    font-weight: 600;
-  
+    font-weight: 400;
+    font-style: regular;
+    color:rgba(169, 233, 245, 1) ;
+    margin-bottom: 1rem !important;
 }
 
 .big-title {
@@ -123,10 +132,11 @@ html {
     font-weight: 700;
     line-height: 100%;
     margin-bottom: 1.5625rem;
+    margin-top: 0 !important;
 }
 
 .big-title span {
-    color:rgba(85, 191, 214, 1);/* غيّري اللون */
+    color:rgba(85, 191, 214, 1);
 }
 
 .hero-paragraph {
@@ -145,28 +155,25 @@ html {
     gap: 1.6875rem;
 }
 
-.btn {
-    width: 12.5rem;
-    height: 3.75rem;
-    font-size: 1.125rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
 
+.btn {
+  padding: 0.75rem 1rem; 
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: auto;  
+  height: auto; 
+}
 .primary-btn {
-    width: 12.5rem;
-    height: 3.75rem;
-    background-color: rgba(85, 191, 214, 1);
-    color: rgba(12, 18, 32, 1);;
-    border: none;
+  background-color: rgba(85, 191, 214, 1);
+  color: rgba(12, 18, 32, 1);;
+   border: none;
 }
 
 .secondary-btn {
-    width: 12.5rem;
-    height: 3.75rem;
-    background: transparent;
-    border: 1px solid white;
-    color: white;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
 }
 
 /* الصورة */
@@ -178,13 +185,12 @@ html {
 
 .hero-image img {
     width: 100%;
-    max-width: 41.25rem;   /* حسب الفيجما */
-    height: 31.1875rem;      /* حسب الفيجما */
-    object-fit: cover;
+    max-width: 41.25rem;   
+    height: 31.1875rem;     
+    object-fit: contain;
     border-radius: 0.625rem;
 }
 
-/* موبايل */
 
 .why-section {
     width: 100%;
@@ -243,7 +249,7 @@ html {
     text-align: left;
     width: 100%;
     margin-bottom: 0.3125rem;
-  
+    min-height: 3.2rem;
 }
 
 .card-paragraph {
@@ -253,6 +259,7 @@ html {
     text-align: left;
     width: 100%;
     max-width: 371px;
+    min-height: 4.5rem;
 }
 
   
@@ -289,8 +296,8 @@ html {
   /* الخطوط الداخلية فقط */
   .grid-features > div {
     padding: 1.875rem 1.5625rem;
-    border-right: 0.03125rem solid rgba(255, 255, 255, 0.25);
-    border-bottom: 0.03125rem solid rgba(255, 255, 255, 0.25);
+    border-right: 0.03125rem solid rgba(43, 52, 75, 1);
+    border-bottom: 0.03125rem solid rgba(43, 52, 75, 1);
   }
   
   /* إزالة آخر عمود */
@@ -399,12 +406,11 @@ html {
   .compare-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 0.625rem;
+    object-fit: contain;
   }
   
   .compare-right {
-    flex: 2;
+    flex: 1;
     display: flex;
     gap: 2rem;
   }
@@ -614,6 +620,30 @@ html {
     justify-content: center;
     padding: 4rem; 
   }
+
+
+  /* تأثير hover لجميع الأزرار */
+.btn, .btn-primary, .secondary-btn, .demo-btn {
+  transition: all 0.3s ease; /* حركة ناعمة */
+}
+
+.btn:hover, 
+.btn-primary:hover, 
+.secondary-btn:hover, 
+.demo-btn:hover {
+  transform: translateY(-2px); /* حركة خفيفة للأعلى */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+  opacity: 0.95; /* خفيف للشفافية */
+}
+
+.nav-links a {
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.9; /* أخف شوية */
+}
+
   
 /* ============================================
    RESPONSIVE DESIGN - TABLET (max-width: 1024px)
@@ -684,7 +714,7 @@ html {
   }
   
   .hero-image img {
-    max-width: 90%;
+    max-width: 80%;
     height: auto;
   }
   
@@ -717,10 +747,11 @@ html {
   /* Compare Section */
   .compare-content {
     flex-direction: column;
+    align-items: center;
   }
   
   .compare-image {
-    max-width: 90%;
+    max-width: 80%;
     max-height: none;
   }
   
@@ -1058,7 +1089,7 @@ html {
   }
  
   .compare-image {
-    max-width: 80%;       /* صغّر الصورة */
+    max-width: 70%;       /* صغّر الصورة */
     margin: 0 auto;       /* خليها في النص */
   }
 
