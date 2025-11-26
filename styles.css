@@ -692,7 +692,7 @@ html {
   .hero-container {
     flex-direction: column;
     gap: 2rem;
-    padding-top: 3rem;
+   
   }
   
   .hero-text {
@@ -722,7 +722,7 @@ html {
   }
   
   .hero-image img {
-    max-width: 80%;
+    max-width: 70%;
     height: auto;
   }
   
@@ -759,7 +759,7 @@ html {
   }
   
   .compare-image {
-    max-width: 80%;
+    max-width: 70%;
     max-height: none;
   }
   
@@ -949,7 +949,6 @@ html {
   /* Hero Section */
   .hero-section {
     padding: 1.5rem 0;
-    margin-top: 0;
     padding-top: 3rem;
 
   }
