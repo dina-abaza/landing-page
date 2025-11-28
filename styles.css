@@ -2,10 +2,10 @@
   box-sizing: border-box; 
 }
 :root {
-  /* Font Sizes - Desktop (XL) */
-  --h1: 3rem;      /* 48px */
-  --h2: 2.25rem;   /* 36px */
-  --p: 1.5rem;     /* 24px */
+  /* Font Sizes - Desktop (XL) - h1: 40px (2.5rem) */
+  --h1: 2.25rem;      /* 40px */
+  --h2: 1.75rem;        /* 32px */
+  --p: 1.125rem;     /* 22px */
   
   /* Font Weights */
   --fw-bold: 700;
@@ -15,27 +15,27 @@
 /* Tablet (L) - max-width: 1024px */
 @media (max-width: 1024px) {
   :root {
-    --h1: 2.5rem;    /* 40px */
-    --h2: 1.875rem;  /* 30px */
-    --p: 1.25rem;    /* 20px */
+    --h1: 2.25rem;     /* 36px */
+    --h2: 1.75rem;     /* 28px */
+    --p: 1.125rem;     /* 18px */
   }
 }
 
 /* Mobile (M) - max-width: 768px */
 @media (max-width: 768px) {
   :root {
-    --h1: 2.25rem;   /* 36px */
-    --h2: 1.75rem;   /* 28px */
-    --p: 1.125rem;   /* 18px */
+    --h1: 2rem;        /* 32px */
+    --h2: 1.5rem;      /* 24px */
+    --p: 1rem;         /* 16px */
   }
 }
 
 /* Small Mobile (XS) - max-width: 480px */
 @media (max-width: 480px) {
   :root {
-    --h1: 1.875rem;  /* 30px */
-    --h2: 1.625rem;  /* 26px */
-    --p: 1rem;       /* 16px */
+    --h1: 1.75rem;     /* 28px */
+    --h2: 1.25rem;     /* 20px */
+    --p: 0.875rem;     /* 14px - (تم تعديله ليكون أصغر قليلاً من M) */
   }
 }
 body {
@@ -43,8 +43,7 @@ margin: 0 auto;
   background: rgba(12, 18, 32, 1);
   font-family: 'Inter', sans-serif;
   color: #fff;
-  max-width: 1920px;
-  max-height: 5382px;
+ 
 }
 html {
 scroll-behavior: smooth;
@@ -102,12 +101,14 @@ transform: translateX(-50%);
 }
 
 .logo-text h1 {
-  font-size: 2.5rem;
+
+  font-size: 2rem;
   font-weight: 700;
   margin: 0;
 }
 
 .logo-text p {
+
   font-size: 1rem;
   margin: 0;
   margin-top: 0.125rem;
@@ -122,14 +123,15 @@ transform: translateX(-50%);
 /* Center nav links */
 .nav-links {
   display: flex;
-  gap: 1.875rem; 
+  gap: 1.5rem; 
   list-style: none;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1.5rem) */
+  font-size: var(--p);
   font-weight: 400;
   font-style: regular;
 }
@@ -147,7 +149,7 @@ transform: translateX(-50%);
 .hero-section {
   width: 100%;
   padding: 5rem 0;
-  margin-top: 5rem;
+  margin-top: 3.5rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -170,7 +172,7 @@ transform: translateX(-50%);
 
 .small-title {
   width: 35rem;
-   font-size: var(--p);
+    font-size: var(--p);
 font-weight: var(--fw-regular);
   font-weight: 400;
   font-style: regular;
@@ -179,8 +181,8 @@ font-weight: var(--fw-regular);
 }
 
 .big-title {
-   width: 43.3125rem;
-  font-size: 4rem;
+  width: 32.3125rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 100%;
   margin-bottom: 1.5625rem;
@@ -220,7 +222,7 @@ height: auto;
 .primary-btn {
 background-color: rgba(85, 191, 214, 1);
 color: rgba(12, 18, 32, 1);;
- border: none;
+  border: none;
 }
 
 .secondary-btn {
@@ -238,8 +240,8 @@ color: white;
 
 .hero-image img {
   width: 100%;
-  max-width: 41.25rem;   
-  height: 31.1875rem;     
+  max-width: 41.25rem;  
+  height: 31.1875rem;    
   object-fit: contain;
   border-radius: 0.625rem;
 }
@@ -250,8 +252,8 @@ color: white;
   padding: 2rem 0;
   background: rgba(12, 18, 32, 1);
   color: white;
-  margin-left: auto;
-  margin-right: auto;
+ margin:  0 auto;
+ margin-top: 0;
 }
 
 .why-container {
@@ -262,17 +264,17 @@ color: white;
 }
 
 .why-title {
-  font-size: var(--h2);
+  font-size: var(--h1);
   font-weight: var(--fw-bold);
   margin-bottom: 3.75rem;
-      text-align: center;
+   text-align: center;
 
 }
 
 .cards {
   display: flex;
   max-width: 100rem;
-  gap: 1.125rem; /* Spacing between cards */
+  gap: 1rem; /* Spacing between cards */
   justify-content: center;
   align-items: stretch; /* Makes cards equal in height */
 }
@@ -294,14 +296,15 @@ color: white;
 }
 
 .card-icon {
-  width: 3.6875rem;
-  height: 3.6875rem;
+  width: 3rem;
+  height: 3rem;
   margin-bottom: 0.625rem;
 }
 
 .card-title {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: var(--h2);
+
+  font-weight: var(--fw-bold);
   /* text-align: center; */
   width: 100%;
   margin-bottom: 0.3125rem;
@@ -371,22 +374,22 @@ color: white;
   border-bottom: none !important;
 }
 
-/* 
-.feature-card {
+/* .feature-card {
   text-align: center;
 } */
 
 .feature-card .icon-feature {
-  width: 4.6875rem;
-  height: 4.6875rem;
+  width: 4rem;
+  height: 4rem;
   margin-bottom: 0.75rem;
 }
 
 .feature-card h3 {
-  font-size: 2.25rem;
+  font-size: var(--h2);
+  font-weight: var(--fw-bold);
   margin-bottom: 0.375rem;
   color:rgba(255, 255, 255, 1) ;
-  font-weight: 700;
+  
   font-style: bold;
 }
 
@@ -399,33 +402,35 @@ color: white;
 
 
 .illustration {
-  padding: 0;                
+  padding: 0;            
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: none;         
+  border-right: none;      
   border-bottom: none;
   border-top: none;
   border: none !important;
 }
 
 .grid-image {
-  width: 100%;               
+  width: 100%;           
   height: 100%;
-  object-fit: contain;       
+  object-fit: contain;      
 }
 
 .compare-section {
   width: 100%;
   margin: 0 auto;
   padding: 2rem 0;
- 
+  
 }
 
 .compare-container {
   width: 90%;
+  margin: 0 auto;
   max-width: 100rem;
-  
+  justify-content: center;
+  align-content: center;
   display: flex;
   flex-direction: column;
 }
@@ -434,7 +439,8 @@ color: white;
 }
 .compare-small-title {
   margin-left: 0;
-  font-weight: 400;
+  font-size: var(--p);
+  font-weight: var(--fw-regular);
   color: rgba(169, 233, 245, 1);
   margin-bottom: 0; 
 }
@@ -498,8 +504,8 @@ color: white;
   align-items: center; /* Checkmark next to title */
   gap: 0.625rem; /* Spacing between checkmark and title */
   margin: 0;
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: var(--h2);
+  font-weight: var(--fw-bold);
   font-style: bold;
   white-space: nowrap;
   width: 100%;
@@ -596,7 +602,7 @@ color: white;
   padding: 1rem;
   gap: 0.75rem;
   color: #fff;
-   font-size: var(--p);
+    font-size: var(--p);
 font-weight: var(--fw-regular);
   border-right: 1px solid rgba(74, 86, 119, 1);
 }
@@ -610,7 +616,7 @@ flex: 1;
   padding: 1rem;
   gap: 0.75rem;
 
-   font-size: var(--p);
+    font-size: var(--p);
 font-weight: var(--fw-regular);
   border-right: 1px solid rgba(74, 86, 119, 1);
 }
@@ -622,7 +628,7 @@ font-weight: var(--fw-regular);
   display: flex;
   justify-content: center;
   padding: 2rem 0;
- 
+  
 }
 
 .faq-container {
@@ -656,8 +662,8 @@ font-weight: var(--fw-regular);
 }
 
 .faq-item h3 {
-  font-size: 2.25rem; /* Approximately 30px */
-  font-weight: 700;
+  font-size: var(--h2);
+  font-weight: var(--fw-bold);
   font-style: bold;
   color: white;
   margin: 0;
@@ -672,12 +678,12 @@ font-weight: var(--fw-regular);
 }
 .footer {
   width: 90%;
-  max-width: 78.6875rem;       /* 1259px ÷ 16 */
+  max-width: 78.6875rem;      /* 1259px ÷ 16 */
   height: auto; 
   margin: 0 auto;
-  font-weight: 400;
-  font-style: regular;       /* Regular */
-  font-size: 1.5rem;        /* 24px ÷ 16 */
+  font-size: var(--p);
+  font-weight: var(--fw-regular);
+  font-style: regular;        /* Regular */
   line-height: 100%;
   text-align: center;
   letter-spacing: 0;
@@ -709,13 +715,13 @@ transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-opacity: 0.9; /* أخف شوية */
+opacity: 0.9; 
 }
 
 
 /* ============================================
- RESPONSIVE DESIGN - TABLET (max-width: 1024px)
- ============================================ */
+  RESPONSIVE DESIGN - TABLET (max-width: 1024px)
+  ============================================ */
 @media (max-width: 1024px) {
 /* Navbar */
 .navbar {
@@ -740,12 +746,13 @@ opacity: 0.9; /* أخف شوية */
 }
 
 .nav-links a {
-   font-size: var(--p);
+    font-size: var(--p);
 font-weight: var(--fw-regular);
 }
 
 .demo-btn {
   padding: 0.75rem 1.25rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
   font-size: 1rem;
 }
 
@@ -753,7 +760,7 @@ font-weight: var(--fw-regular);
 .hero-container {
   flex-direction: column;
   gap: 2rem;
- 
+  
 }
 
 .hero-text {
@@ -793,15 +800,29 @@ font-weight: var(--fw-regular);
   align-items: center;
 }
 
+.card-icon{
+  width: 3rem;
+  height: 3rem;
+}
 .card {
   width: 100%;
   max-width: 32rem;
   height: auto;
   min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
+.card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.75rem;
+}
 /* Features Section */
 .grid-features {
+  padding-top: 0;
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -812,7 +833,30 @@ font-weight: var(--fw-regular);
 .grid-features > div:nth-child(3n) {
   border-right: 0.03125rem solid rgba(255, 255, 255, 0.25);
 }
+.feature-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.feature-header{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: baseline; 
 
+}
+.feature-header h3{
+
+  margin: 0;
+  padding: 0;
+
+}
+.feature-card .icon-feature{
+  width: 3rem;
+  height: 3rem;
+  margin: 0;
+}
 /* Compare Section */
 .compare-content {
   flex-direction: column;
@@ -844,7 +888,6 @@ font-weight: var(--fw-regular);
 }
 
 .compare-item h3 {
-  font-size: 1.75rem;
   white-space: normal;
   display: flex;
   align-items: center;
@@ -905,16 +948,11 @@ font-weight: var(--fw-regular);
   border-right: none;
 }
 
-.table-body {
-  min-width: 600px;
-  display: flex;
-  flex: 1;
-}
-
 .table-column {
   border-right: 1px solid rgba(74, 86, 119, 1);
   border-bottom: none;
-  font-size: 0.9375rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 0.9375rem) */
+  font-size: var(--p);
 }
 
 .table-column:last-child {
@@ -924,7 +962,8 @@ font-weight: var(--fw-regular);
 .table-column3 {
   border-right: none;
   border-bottom: none;
-  font-size: 0.9375rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 0.9375rem) */
+  font-size: var(--p);
 }
 
 /* FAQ Section */
@@ -940,28 +979,18 @@ font-weight: var(--fw-regular);
 }
 }
 .footer {
+
 width: 95%;
-font-size: 1rem;
+/* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+font-size: var(--p);
 height: auto;
-/* لا تلمسي الـ padding-bottom هنا */
 }
-/* #####################################################################################################
-###############################################################################################
-##########################################################################
-################################################################
 
-#########################################################################
-####################################################################
-##############################################
-######################
-######################
-####################
-#################*/
 /* ============================================
- RESPONSIVE DESIGN - MOBILE (max-width: 768px)
- ============================================ */
+  RESPONSIVE DESIGN - MOBILE (max-width: 768px)
+  ============================================ */
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
 /* Body */
 body {
   max-width: 100%;
@@ -987,7 +1016,8 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2000;
-  font-size: 2rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 2rem) */
+  font-size: var(--h1);
   color: white;
   background: rgba(12, 18, 32, 0.8);
   padding: 0.5rem;
@@ -1024,14 +1054,14 @@ body {
 }
 
 .nav-links a {
-  font-size: 1.125rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1.125rem) */
+  font-size: var(--p);
   padding: 0.5rem 0;
   display: block;
   width: 100%;
 }
 
 .demo-btn {
-  width: 100%;
   text-align: center;
   padding: 0.875rem 1.25rem;
 }
@@ -1045,6 +1075,7 @@ body {
 }
 
 .logo-text p {
+
   font-size: 0.75rem;
 }
 
@@ -1066,18 +1097,21 @@ body {
 }
 
 .small-title {
-  font-size: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+  font-size: var(--p);
   margin-bottom: 0.75rem;
 }
 
 .big-title {
-  font-size: 2rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 2rem) */
+  font-size: var(--h1);
   line-height: 120%;
   margin-bottom: 1rem;
 }
 
 .hero-paragraph {
-  font-size: 1.125rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1.125rem) */
+  font-size: var(--p);
   margin-bottom: 1.5rem;
 }
 
@@ -1093,7 +1127,8 @@ body {
   width: auto;
   min-width: 12.5rem;
   height: 3.25rem;
-  font-size: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+  font-size: var(--p);
 }
 
 .hero-image img {
@@ -1107,7 +1142,8 @@ body {
 }
 
 .why-title {
-  font-size: 2rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 2rem) */
+  font-size: var(--h1);
   margin-bottom: 2rem;
 }
 
@@ -1118,18 +1154,18 @@ body {
   min-height: auto;
 }
 
-.card-icon {
-  width: 3rem;
-  height: 3rem;
+.card-icon{
+  width: 2.8rem;
+  height: 2.8rem;
 }
 
 .card-title {
-  font-size: 1.75rem;
   white-space: normal;
 }
 
 .card-paragraph {
-  font-size: 1.125rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1.125rem) */
+  font-size: var(--p);
 }
 
 /* Features Section */
@@ -1138,7 +1174,8 @@ body {
 }
 
 .title-features {
-  font-size: 2rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 2rem) */
+  font-size: var(--h1);
   margin-bottom: 2rem;
 }
 
@@ -1171,17 +1208,20 @@ body {
 }
 
 .feature-card .icon-feature {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .feature-card h3 {
-  font-size: 1.75rem;
+  /* تم التعديل: استخدام المتغير --h2 (كانت 1.75rem) */
+  font-size: var(--h2);
 }
 
 .feature-card p {
-  font-size: 1.125rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1.125rem) */
+  font-size: var(--p);
 }
+
 .illustration {
   display: flex;
   justify-content: center;
@@ -1204,7 +1244,6 @@ body {
 }
 
 .compare-small-title {
-  font-size: 0.875rem;
   max-width: 100%;
   text-align: center;
 }
@@ -1226,8 +1265,8 @@ body {
 }
 
 .compare-image {
-  max-width: 70%;       /* صغّر الصورة */
-  margin: 0 auto;       /* خليها في النص */
+  max-width: 70%;      /* صغّر الصورة */
+  margin: 0 auto;      /* خليها في النص */
 }
 
 .compare-image img {
@@ -1235,7 +1274,6 @@ body {
   height: auto;
 }
 .compare-item h3 {
-  font-size: 1.5rem;
   flex-wrap: wrap;
   display: flex;
   align-items: center;
@@ -1245,7 +1283,8 @@ body {
 }
 
 .compare-item p {
-  font-size: 1.125rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1.125rem) */
+  font-size: var(--p);
   margin: 0;
   margin-top: 0;
   width: 100%;
@@ -1261,7 +1300,8 @@ body {
   width: auto;
   min-width: 12.5rem;
   padding: 0.875rem 1.5625rem;
-  font-size: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+  font-size: var(--p);
 }
 
 /* Table Section */
@@ -1291,7 +1331,8 @@ body {
 }
 
 .table-title {
-  font-size: 2rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 2rem) */
+  font-size: var(--h1);
   max-width: 100%;
   text-align: center;
   margin-bottom: 1rem;
@@ -1315,7 +1356,7 @@ body {
   min-width: 600px;
   display: flex;
   flex: 1;
- 
+  
 }
 
 .table-header-cell {
@@ -1324,6 +1365,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding-left: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
@@ -1344,7 +1386,8 @@ body {
   padding: 1rem;
   gap: 0.75rem;
   color: #fff;
-  font-size: 0.875rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 0.875rem) */
+  font-size: var(--p);
   border-right: 1px solid rgba(74, 86, 119, 1);
   min-width: 0;
 }
@@ -1362,7 +1405,8 @@ body {
   padding: 1rem;
   gap: 0.75rem;
   color: rgba(85, 191, 214, 1);
-  font-size: 0.875rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 0.875rem) */
+  font-size: var(--p);
   border-right: none;
   min-width: 0;
 }
@@ -1379,7 +1423,8 @@ body {
 }
 
 .faq-title {
-  font-size: 2rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 2rem) */
+  font-size: var(--h1);
   margin-bottom: 1.5rem;
 }
 
@@ -1391,26 +1436,19 @@ body {
   justify-content: flex-start;
 }
 
-.faq-item h3 {
-  font-size: 1.75rem;
-}
-
-.faq-item p {
-  font-size: 1.125rem;
-}
-
 /* Footer */
 .footer {
   width: 95%;
-  font-size: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+  font-size: var(--p);
   height: auto;
   /* لا تلمسي الـ padding-bottom هنا */
 }
 }
 
 /* ============================================
- RESPONSIVE DESIGN - SMALL MOBILE (max-width: 480px)
- ============================================ */
+  RESPONSIVE DESIGN - SMALL MOBILE (max-width: 480px)
+  ============================================ */
 @media (max-width: 480px) {
 
 /* Navbar */
@@ -1424,7 +1462,8 @@ body {
 
 .menu-label {
   right: 0.5rem;
-  font-size: 1.75rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 1.75rem) */
+  font-size: var(--h1);
   padding: 0.4rem;
 }
 
@@ -1433,11 +1472,13 @@ body {
 }
 
 .logo-text h1 {
-  font-size: 1.5rem;
+ 
+  font-size: 1.25rem;
 }
 
 .logo-text p {
-  font-size: 0.7rem;
+  
+  font-size: 0.25rem;
 }
 
 .logo-icon {
@@ -1451,19 +1492,23 @@ body {
 }
 
 .logo-text h1 {
+ 
   font-size: 1.5rem;
 }
 
 .logo-text p {
+ 
   font-size: 0.75rem;
 }
 
 /* Hero Section */
 .big-title {
+
   font-size: 1.75rem;
 }
 
 .hero-paragraph {
+ 
   font-size: 1rem;
 }
 
@@ -1481,28 +1526,49 @@ body {
 
 /* Why Section */
 .why-title {
-  font-size: 1.75rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 1.75rem) */
+  font-size: var(--h1);
 }
 
-.card-title {
+/* .card-title {
   font-size: 1.5rem;
-}
+} */
 
 .card-paragraph {
-  font-size: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+  font-size: var(--p);
 }
+.card-header {
+  gap: 0.5rem;
+}
+.card-title{
+  white-space: nowrap;
+}
+.card-icon{
+  width: 2rem;
+  height: 2rem;
+}
+
 
 /* Features Section */
 .title-features {
-  font-size: 1.75rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 1.75rem) */
+  font-size: var(--h1);
 }
 
 .feature-card h3 {
-  font-size: 1.5rem;
+  /* تم التعديل: استخدام المتغير --h2 (كانت 1.5rem) */
+  font-size: var(--h2);
 }
 
 .feature-card p {
-  font-size: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+  font-size: var(--p);
+}
+.feature-card .icon-feature {
+  width: 2rem;
+  height: 2rem;
+ 
 }
 .illustration {
   display: flex;
@@ -1518,23 +1584,25 @@ body {
 
 /* Compare Section */
 .compare-big-title {
-  font-size: 1.75rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 1.75rem) */
+  font-size: var(--h1);
 }
 
 .compare-item h3 {
-  font-size: 1.25rem;
+  
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .compare-item p {
-  font-size: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+  font-size: var(--p);
   margin-top: 0;
 }
 .compare-image {
-  max-width: 80%;       /* صغّر الصورة */
-  margin: 0 auto;       /* خليها في النص */
+  max-width: 80%;      /* صغّر الصورة */
+  margin: 0 auto;      /* خليها في النص */
 }
 
 .compare-image img {
@@ -1544,22 +1612,26 @@ body {
 
 /* Table Section */
 .table-title {
-  font-size: 1.75rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 1.75rem) */
+  font-size: var(--h1);
 }
 
 .table-header-cell {
+  /* تم التعديل: استخدام المتغير --p (كانت 0.875rem) */
   font-size: 0.875rem;
   padding-left: 1rem;
   white-space: nowrap;
 }
 
 .table-column {
-  font-size: 0.75rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 0.75rem) */
+  font-size: var(--p);
   padding: 1rem;
 }
 
 .table-column3 {
-  font-size: 0.75rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 0.75rem) */
+  font-size: var(--p);
   padding: 1rem;
   color: rgba(85, 191, 214, 1);
 }
@@ -1578,22 +1650,257 @@ body {
 
 /* FAQ Section */
 .faq-title {
-  font-size: 1.75rem;
+  /* تم التعديل: استخدام المتغير --h1 (كانت 1.75rem) */
+  font-size: var(--h1);
 }
 
 .faq-item h3 {
-  font-size: 1.5rem;
+  /* تم التعديل: استخدام المتغير --h2 (كانت 1.5rem) */
+  font-size: var(--h2);
 }
 
 .faq-item p {
-  font-size: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+  font-size: var(--p);
 }
 
 /* Footer */
 .footer {
   width: 95%;
-  font-size: 1rem;
+  /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
+  font-size: var(--p);
   height: auto;
-  /* لا تلمسي الـ padding-bottom هنا */
+  
 }
+}
+/* ############################################ */
+@media (max-width: 1044px) and (min-width: 1024px) {
+  .card-title {
+    margin-top: 0;
+  }
+}
+
+
+
+
+
+
+/* الألوان والخطوط الأساسية (يفضل أن تكون في :root أو ملف منفصل) */
+:root {
+  --primary-bg: #0C1220;
+  --secondary-bg: #141F37;
+  --input-bg: #0D162B;
+  --border-color: #2B344B;
+  --text-color: #FFFFFF;
+  --label-color: #D6E0FF;
+  --accent-blue: #55BFD6;
+  --error-red: #D65555; 
+  --modal-radius: 0.5rem;
+  --font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+/* -------------------- Modal Styles -------------------- */
+
+/* الطبقة الخلفية (الشفافة التي تغطي الصفحة) */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* خلفية شفافة وداكنة */
+  display: flex; /* لعرض الـ modal في المنتصف */
+  align-items: center; /* توسيط رأسي */
+  justify-content: center; /* توسيط أفقي */
+  z-index: 1000; /* ليكون فوق كل شيء آخر */
+  /* display: none; /* ستقوم الـ JS بالتحكم في هذا */
+}
+
+/* مربع الـ Modal نفسه */
+.modal {
+  background-color: var(--secondary-bg); /* لون الخلفية الداخلي */
+  border: 1px solid var(--border-color); /* إطار حول الـ Modal */
+  border-radius: 0.5rem; /* زوايا دائرية */
+  width: 90%; /* عرض Modal على الشاشات الصغيرة */
+  max-width: 700px; /* أقصى عرض للـ Modal */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 1.5rem; /* مسافة داخلية */
+  box-sizing: border-box; /* لضمان أن الـ padding لا يزيد العرض الكلي */
+}
+
+/* Header في الـ Modal (العنوان وزر الإغلاق) */
+.modal header.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem; /* مسافة تحت الهيدر */
+  border-bottom: 1px solid var(--border-color); /* خط فاصل */
+  margin-bottom: 1.5rem; /* مسافة تحت الخط */
+}
+
+.modal header h3 {
+  margin: 0; /* إزالة الهامش الافتراضي */
+  font-size: 1rem; /* حجم الخط لعنوان الـ Modal */
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* زر الإغلاق X */
+.modal header button.btn {
+  background: none;
+  border: none;
+  color: var(--label-color); /* لون رمز الإغلاق */
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+}
+.modal header button.btn:hover {
+  color: var(--text-color);
+}
+
+/* -------------------- Form Styles -------------------- */
+
+/* الأقسام ذات العمودين */
+.twocol {
+  display: flex;
+  gap: 1.5rem; /* المسافة بين الأعمدة */
+  margin-bottom: 1rem; /* المسافة بين الصفوف */
+}
+.twocol > div {
+  flex: 1; /* لجعل الأعمدة تتوزع بالتساوي */
+}
+
+/* Labels */
+label {
+  display: block; /* لجعل الـ label يأخذ سطراً كاملاً */
+  margin-bottom: 0.5rem;
+  color: var(--label-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Input fields و Select و Textarea */
+input, select, textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);  /* لون خلفية المدخلات */
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box; /* لضمان أن الـ padding لا يزيد العرض */
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-blue); /* لون الإطار عند التركيز */
+  outline: none;
+}
+
+/* Textarea */
+textarea {
+  resize: vertical; /* للسماح بتغيير الحجم عمودياً فقط */
+  min-height: 80px;
+  margin-top: 0.5rem; /* المسافة بين الـ label والـ textarea */
+}
+
+/* المسافة للـ textarea لوحدها */
+form > div:last-of-type:not(.twocol) {
+  margin-bottom: 1.5rem;
+}
+
+/* زر الإرسال */
+.modal-actions {
+  display: flex;
+  justify-content: flex-start; /* محاذاة لليسار */
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn--primary {
+  background-color: var(--accent-blue);
+  color: var(--primary-bg);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+.btn--primary:hover {
+  background-color: #6edceb; /* لون أزرق أفتح قليلا عند التمرير */
+}
+
+/* رسالة تأكيد النموذج */
+#formMsg {
+  font-size: 0.9rem;
+  color: var(--label-color);
+}
+
+input::placeholder, textarea::placeholder {
+  font-size: 0.9rem; /* أصغر قليلاً من حجم النص العادي */
+  color: #8C99B0; /* لون أغمق قليلاً للـ Placeholder */
+}
+/* التركيز على الإدخالات (عند الضغط عليها) */
+input:focus, select:focus, textarea:focus {
+  /* 👈 تم تغيير لون الحدود عند التركيز إلى الأبيض */
+  border-color: var(--text-color); 
+  outline: none;
+}
+/* -------------------- Responsive (Mobile) -------------------- */
+@media (max-width: 768px) {
+ 
+  .modal header h3 {
+      font-size: 1.5rem;
+  }
+  .modal header.wrap {
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+  }
+  .modal-backdrop {
+    /* لجعل النموذج يبدأ من الأعلى بدلاً من المنتصف في الجوال */
+    align-items: flex-start; 
+    padding-top: 20px; 
+    overflow-y: auto;
+    /* لإضافة مسافة من أعلى الشاشة */
+}
+
+.modal {
+    padding: 1rem;
+    width: 95%; 
+    /* 👈 إضافة هامش سفلي للتأكد من أن الزر يظهر بالكامل */
+    margin-bottom: 20px; 
+    overflow-y: auto;
+}
+  .twocol {
+      flex-direction: column; /* جعل الأعمدة فوق بعضها في الموبايل */
+      gap: 0.5rem; /* تقليل المسافة بين الحقول */
+      margin-bottom: 0.5rem;
+  }
+  label {
+      margin-bottom: 0.3rem;
+  }
+  input, select, textarea {
+      padding: 0.6rem 0.8rem;
+      font-size: 0.9rem;
+  }
+  .btn--primary {
+    padding: 0.2rem 0.7rem; 
+    font-size: 0.9rem;
+  }
+  .modal-actions {
+      margin-top: 1rem;
+      justify-content: center; /* توسيط زر الإرسال في الموبايل */
+  }
+  form > div:last-of-type:not(.twocol) {
+      margin-bottom: 1rem;
+  }
 }

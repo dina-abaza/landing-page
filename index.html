@@ -34,7 +34,7 @@
                 <li><a href="#compare">Compare</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="#" class="demo-btn">Book a Demo</a>
+            <a href="#" class="demo-btn" id="openDemoBtn">Book a Demo</a>
         </div>
 
     </div>
@@ -59,8 +59,8 @@
             </p>
 
             <div class="hero-buttons">
-                <button class="btn primary-btn">Book a Live Demo</button>
-                <button class="btn secondary-btn">See How It Works</button>
+                <button class="btn primary-btn" id="openDemoBtn">Book a Live Demo</button>
+                <button class="btn secondary-btn" id="Features">See How It Works</button>
             </div>
         </div>
 
@@ -80,8 +80,10 @@
         <div class="cards">
             <!-- Card 1 -->
             <div class="card">
+              <div class="card-header">
                 <img src="technology.png" alt="technology" class="card-icon">
                 <h3 class="card-title">Unified Data Engine</h3>
+              </div>
                 <p class="card-paragraph">
                     POS + delivery + labour + inventory in one schema with minute-level refresh.
                 </p>
@@ -89,17 +91,21 @@
 
             <!-- Card 2 -->
             <div class="card">
+              <div class="card-header">
                 <img src="task-list.png" alt="task-list" class="card-icon">
                 <h3 class="card-title">Self-Reporting Studio</h3>
+                </div>
                 <p class="card-paragraph">
                     Build reports — no SQL. Save templates for regions and brands.
-                    </p>
+                  </p>
             </div>
 
             <!-- Card 3 -->
             <div class="card">
+              <div class="card-header">
                 <img src="budget.png" alt="budget" class="card-icon">
                 <h3 class="card-title">Profit Intelligence</h3>
+                </div>
                 <p class="card-paragraph">
                     Like-for-like store views and 12-week forecasts with alerts.
                 </p>
@@ -120,52 +126,71 @@
       <div class="grid-features">
         <!-- Item -->
         <div class="feature-card">
-          <img src="dashboard.png" alt="dashboard" class="icon-feature">
-          <h3>Real-Time Dashboards</h3>
+          <div class="feature-header">
+            <img src="profit.png" alt="dashboard" class="icon-feature">
+            <h3>Real-Time Dashboards</h3>
+          </div>
           <p>Optimized queries load critical KPIs in 1–5s, per-client isolated infra.</p>
         </div>
 
         <div class="feature-card">
-          <img src="backlog.png" alt="backlog" class="icon-feature">
-          <h3>Reconciliation</h3>
+          <div class="feature-header">
+            <img src="backlog.png" alt="backlog" class="icon-feature">
+            <h3>Reconciliation</h3>
+          </div>
           <p>Fix UberEats/DoorDash/3rd-party integration, reduce errors, speed operations.</p>
         </div>
 
         <div class="feature-card">
-          <img src="graph.png" alt="graph" class="icon-feature">
-          <h3>COGS & Margins</h3>
+          <div class="feature-header">
+            <img src="graph.png" alt="graph" class="icon-feature">
+            <h3>COGS & Margins</h3>
+          </div>
           <p>Product profitability analysis with item-level tracking.</p>
         </div>
 
         <!-- Row 2 -->
         <div class="feature-card">
-          <img src="team-member.png" alt="team-member" class="icon-feature">
-          <h3>Labour Productivity</h3>
+          <div class="feature-header">
+            <img src="team-member.png" alt="team-member" class="icon-feature">
+            <h3>Labour Productivity</h3>
+          </div>
+         
           <p>Shift insights improve hours vs productivity — better scheduling.</p>
         </div>
 
         <div class="feature-card">
-          <img src="checklist.png" alt="checklist" class="icon-feature">
-          <h3>Multi-Brand/Region</h3>
+          <div class="feature-header">
+            <img src="checklist.png" alt="checklist" class="icon-feature">
+            <h3>Multi-Brand/Region</h3>
+          </div>
+         
           <p>Rollups by brand, store, and franchise in one hierarchy.</p>
         </div>
 
         <div class="feature-card">
-          <img src="profit.png" alt="profit" class="icon-feature">
-          <h3>Custom Budgets</h3>
+          <div class="feature-header">
+            <img src="profit.png" alt="profit" class="icon-feature">
+            <h3>Custom Budgets</h3>
+          </div>
+       
           <p>Upload budgets monthly/weekly for tracking.</p>
         </div>
 
         <!-- Row 3 -->
         <div class="feature-card">
-          <img src="status-report.png" alt="status-report" class="icon-feature">
-          <h3>Self-Serve Exports</h3>
+          <div class="feature-header">
+            <img src="status-report.png" alt="status-report" class="icon-feature">
+            <h3>Self-Serve Exports</h3>
+          </div>
           <p>Export any data as CSV, scheduled exports, or custom report.</p>
         </div>
 
         <div class="feature-card">
-          <img src="resource.png" alt="resource" class="icon-feature">
-          <h3>Marketing Hooks</h3>
+          <div class="feature-header">
+            <img src="resource.png" alt="resource" class="icon-feature">
+            <h3>Marketing Hooks</h3>
+          </div>
           <p>Trigger messaging automations for customer targeting.</p>
         </div>
 
@@ -228,7 +253,7 @@
   
       <!-- الزر تحت الأعمدة -->
       <div class="compare-button">
-        <button class="btn-primary">Introduce TenzoBI to Your Business</button>
+        <button class="btn-primary" id="openDemoBtn">Introduce TenzoBI to Your Business</button>
       </div>
     </div>
   </section>
@@ -312,6 +337,73 @@
       <footer class="footer">
         TenzoBI — Business Intelligence. Simplified Growth. | Privacy  © 2025 TenzoBI
       </footer>
+
+      <div class="modal-backdrop" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true" style="display: none;">
+        <div class="modal">
+          <header class="wrap" style="display:flex;align-items:center;justify-content:space-between">
+            <h3 style="margin:0">Request a Live Demo</h3>
+            <button class="btn" id="closeDemo" aria-label="Close">✕</button>
+          </header>
+          <div class="wrap" style="padding-bottom:12px">
+            <form id="demoForm" novalidate="">
+              <div class="twocol">
+                <div>
+                  <label for="name">Full name *</label>
+                  <input id="name" name="name" required="">
+                </div>
+                <div>
+                  <label for="email">Work email *</label>
+                  <input id="email" name="email" type="email" required="">
+                </div>
+              </div>
+              <div class="twocol">
+                <div>
+                  <label for="company">Company / Brand *</label>
+                  <input id="company" name="company" required="">
+                </div>
+                <div>
+                  <label for="country">Country / Region *</label>
+                  <input id="country" name="country" required="">
+                </div>
+              </div>
+              <div class="twocol">
+                <div>
+                  <label for="stores"># of locations *</label>
+                  <select id="stores" name="stores" required="">
+                    <option value="" disabled="" selected="">Select</option>
+                    <option>1–20</option>
+                    <option>21–50</option>
+                    <option>51–100</option>
+                    <option>100+</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="pos">Current POS / Systems *</label>
+                  <input id="pos" name="pos" required="" placeholder="e.g., Xilnex, Square, Toast">
+                </div>
+              </div>
+              <div>
+                <label for="message">What would you like to see?</label>
+                <textarea id="message" name="message" placeholder="e.g., multi-brand dashboards, COGS/margins, reconciliation"></textarea>
+              </div>
+              <!-- Honeypot -->
+              <input type="text" id="hp" name="hp" style="display:none" tabindex="-1" autocomplete="off">
+              <div class="modal-actions">
+                <button class="btn btn--primary" type="submit">Submit</button>
+                <span id="formMsg" style="color:#A7B1C8"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+  
+
+      <script src="script.js"></script>
+
+
 
    
 </body>
