@@ -34,7 +34,7 @@
                 <li><a href="#compare">Compare</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="#" class="demo-btn" id="openDemoBtn">Book a Demo</a>
+            <a href="#" class="demo-btn open-demo-btn" id="openDemoBtn">Book a Demo</a>
         </div>
 
     </div>
@@ -59,8 +59,10 @@
             </p>
 
             <div class="hero-buttons">
-                <button class="btn primary-btn" id="openDemoBtn">Book a Live Demo</button>
-                <button class="btn secondary-btn" id="Features">See How It Works</button>
+                <button class="btn primary-btn open-demo-btn" id="openDemoBtn2">Book a Live Demo</button>
+               <a href="#features" class="btn secondary-btn">See How It Works</a>
+
+
             </div>
         </div>
 
@@ -126,71 +128,71 @@
       <div class="grid-features">
         <!-- Item -->
         <div class="feature-card">
-          <div class="feature-header">
+         
             <img src="profit.png" alt="dashboard" class="icon-feature">
             <h3>Real-Time Dashboards</h3>
-          </div>
+        
           <p>Optimized queries load critical KPIs in 1–5s, per-client isolated infra.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-header">
+         
             <img src="backlog.png" alt="backlog" class="icon-feature">
             <h3>Reconciliation</h3>
-          </div>
+        
           <p>Fix UberEats/DoorDash/3rd-party integration, reduce errors, speed operations.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-header">
+        
             <img src="graph.png" alt="graph" class="icon-feature">
             <h3>COGS & Margins</h3>
-          </div>
+          
           <p>Product profitability analysis with item-level tracking.</p>
         </div>
 
         <!-- Row 2 -->
         <div class="feature-card">
-          <div class="feature-header">
+        
             <img src="team-member.png" alt="team-member" class="icon-feature">
             <h3>Labour Productivity</h3>
-          </div>
+        
          
           <p>Shift insights improve hours vs productivity — better scheduling.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-header">
+       
             <img src="checklist.png" alt="checklist" class="icon-feature">
             <h3>Multi-Brand/Region</h3>
-          </div>
+        
          
           <p>Rollups by brand, store, and franchise in one hierarchy.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-header">
+         
             <img src="profit.png" alt="profit" class="icon-feature">
             <h3>Custom Budgets</h3>
-          </div>
+        
        
           <p>Upload budgets monthly/weekly for tracking.</p>
         </div>
 
         <!-- Row 3 -->
         <div class="feature-card">
-          <div class="feature-header">
+          
             <img src="status-report.png" alt="status-report" class="icon-feature">
             <h3>Self-Serve Exports</h3>
-          </div>
+       
           <p>Export any data as CSV, scheduled exports, or custom report.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-header">
+          
             <img src="resource.png" alt="resource" class="icon-feature">
             <h3>Marketing Hooks</h3>
-          </div>
+          
           <p>Trigger messaging automations for customer targeting.</p>
         </div>
 
@@ -253,7 +255,7 @@
   
       <!-- الزر تحت الأعمدة -->
       <div class="compare-button">
-        <button class="btn-primary" id="openDemoBtn">Introduce TenzoBI to Your Business</button>
+        <button class="btn-primary open-demo-btn" id="openDemoBtn3">Introduce TenzoBI to Your Business</button>
       </div>
     </div>
   </section>
@@ -340,7 +342,7 @@
 
       <div class="modal-backdrop" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true" style="display: none;">
         <div class="modal">
-          <header class="wrap" style="display:flex;align-items:center;justify-content:space-between">
+          <header class="wrap modal-header-fix">
             <h3 style="margin:0">Request a Live Demo</h3>
             <button class="btn" id="closeDemo" aria-label="Close">✕</button>
           </header>
@@ -395,6 +397,11 @@
             </form>
           </div>
         </div>
+      </div>
+
+      <!-- Toast Notification -->
+      <div id="toast" class="toast" role="alert" aria-live="polite">
+        <span id="toastMessage"></span>
       </div>
 
 

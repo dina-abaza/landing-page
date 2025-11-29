@@ -148,7 +148,7 @@ transform: translateX(-50%);
 /* Main Hero Section */
 .hero-section {
   width: 100%;
-  padding: 5rem 0;
+  padding: 2rem 0;
   margin-top: 3.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -222,13 +222,17 @@ height: auto;
 .primary-btn {
 background-color: rgba(85, 191, 214, 1);
 color: rgba(12, 18, 32, 1);;
-  border: none;
+border: none;
 }
+
 
 .secondary-btn {
 background: transparent;
 border: 1px solid white;
 color: white;
+text-decoration: none;
+text-align: center;
+
 }
 
 /* Image */
@@ -249,7 +253,7 @@ color: white;
 
 .why-section {
   width: 100%;
-  padding: 2rem 0;
+  padding: 1rem 0;
   background: rgba(12, 18, 32, 1);
   color: white;
  margin:  0 auto;
@@ -344,35 +348,48 @@ color: white;
 
 }
 
-
-.grid-features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: rgba(20, 31, 55, 1);
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-/* Internal borders only */
+/* 1. تطبيق الحدود على جميع الخلايا (اليمين والأسفل) */
 .grid-features > div {
-  padding: 1.875rem 1.5625rem;
+  /* لون الحد الذي حددته سابقاً */
   border-right: 0.03125rem solid rgba(43, 52, 75, 1);
   border-bottom: 0.03125rem solid rgba(43, 52, 75, 1);
+  padding: 1.875rem 1.5625rem; /* احتفظ بالحشو الأصلي */
 }
 
-/* Remove last column border */
+/* 2. إزالة الحد العمودي (الحد الأيمن) من العمود الأخير (العناصر: 3, 6, 9) */
+/* nth-child(3n) تستهدف مضاعفات الرقم 3 (أي العمود الأخير) */
 .grid-features > div:nth-child(3n) {
   border-right: none;
 }
 
-/* Remove last row border */
-.grid-features > div:nth-last-child(-n+3) {
+/* 3. 🎯 إزالة الحد الأفقي (الحد السفلي) من الصف الأخير بالكامل */
+/* في تصميمك، الصف الأخير يبدأ من العنصر السابع (7، 8، 9) */
+.grid-features > div:nth-child(n + 7) { 
   border-bottom: none;
 }
-
-.grid-features > div:nth-child(6) {
-  border-bottom: none !important;
+.grid-features > div:nth-child(8) {
+  /* إلغاء الحد الأيمن للبطاقة رقم 8 بشكل قاطع */
+  border-right: none !important; 
 }
+
+/* 4. معالجة خاصة: إذا كانت الصورة تحتاج إزالة الحدود بالكامل */
+.illustration {
+  border: none !important; /* لضمان إزالة أي حدود قد تكون متبقية من القواعد أعلاه */
+  /* ... احتفظ بباقي خصائص العرض للصورة ... */
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: rgba(20, 31, 55, 1);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* Internal borders only */
 
 /* .feature-card {
   text-align: center;
@@ -401,16 +418,6 @@ color: white;
 }
 
 
-.illustration {
-  padding: 0;            
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-right: none;      
-  border-bottom: none;
-  border-top: none;
-  border: none !important;
-}
 
 .grid-image {
   width: 100%;           
@@ -631,9 +638,6 @@ font-weight: var(--fw-regular);
   
 }
 
-.faq-container {
-  max-width: 1056px; /* Maximum width */
-}
 
 .faq-title {
   font-size: var(--h1); /* Approximately 48px */
@@ -755,6 +759,9 @@ font-weight: var(--fw-regular);
   /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
   font-size: 1rem;
 }
+.hero-section{
+  margin-top: 5rem;
+}
 
 /* Hero Section */
 .hero-container {
@@ -821,18 +828,44 @@ font-weight: var(--fw-regular);
   gap: 0.75rem;
 }
 /* Features Section */
-.grid-features {
-  padding-top: 0;
-  grid-template-columns: repeat(2, 1fr);
+
+    
+  /* 1. تفعيل نظام العمودين */
+  .grid-features {
+    grid-template-columns: repeat(2, 1fr);
 }
 
+/* 2. إعادة تطبيق الحد بوضوح على العمود الأول (العناصر الفردية: 1, 3, 5, 7, ...) */
+/* البطاقة رقم 3 تندرج تحت هذه القاعدة. استخدام !important يضمن تطبيق الحد */
+.grid-features > div:nth-child(2n + 1) {
+    border-right: 0.03125rem solid rgba(43, 52, 75, 1) !important; 
+}
+
+/* 3. إزالة الحد من العمود الأخير (العناصر الزوجية: 2, 4, 6, 8, ...) */
+/* هذا يضمن إزالة الحد من البطاقة رقم 4 */
 .grid-features > div:nth-child(2n) {
-  border-right: none;
+    border-right: none !important; 
 }
 
-.grid-features > div:nth-child(3n) {
-  border-right: 0.03125rem solid rgba(255, 255, 255, 0.25);
+/* 4. إزالة الحد السفلي من الصف الأخير (7, 8, 9) */
+.grid-features > div:nth-child(n + 7) { 
+    border-bottom: none !important;
 }
+.grid-features > div.illustration {
+  border-right: none !important;
+}
+
+/* إلغاء الحد الأيمن للعنصر التاسع بشكل عام للتأكد */
+.grid-features > div:nth-child(9) {
+  border-right: none !important;
+}
+
+/* 5. معالجة عنصر الصورة */
+.illustration {
+    border: none !important; 
+}
+
+
 .feature-card{
   display: flex;
   flex-direction: column;
@@ -1126,7 +1159,8 @@ body {
 .btn {
   width: auto;
   min-width: 12.5rem;
-  height: 3.25rem;
+  text-align: center;
+  padding: 0.875rem 1.25rem;
   /* تم التعديل: استخدام المتغير --p (كانت 1rem) */
   font-size: var(--p);
 }
@@ -1183,30 +1217,40 @@ body {
   grid-template-columns: 1fr;
 }
 
+.grid-features {
+  grid-template-columns: 1fr;
+}
+
+/* 1. تطبيق الحد السفلي على كل عنصر في الشبكة بقوة (1 إلى 9) */
 .grid-features > div {
-  border-right: none;
-  border-bottom: 0.03125rem solid rgba(255, 255, 255, 0.25);
+  /* هذه القاعدة تضمن أن الحد السفلي يظهر على جميع البطاقات */
+  border-bottom: 0.03125rem solid rgba(255, 255, 255, 0.25) !important; 
+  border-right: none !important; /* إلغاء الحدود العمودية */
   padding: 1.25rem 1rem;
 }
 
-/* إزالة البوردر من آخر عنصر فقط (illustration) */
-.grid-features > div:last-child {
-  border-bottom: none;
-}
-
-/* إزالة البوردر من illustration */
-.grid-features > .illustration {
-  border-bottom: none !important;
-}
-
-.grid-features > div:nth-child(2n) {
-  border-right: none;
-}
-
+/* 2. إلغاء أي تأثير لقواعد nth-child قديمة كانت تزيل الحد السفلي */
+.grid-features > div:nth-child(2n),
 .grid-features > div:nth-child(3n) {
-  border-right: none;
+  border-bottom: 0.03125rem solid rgba(255, 255, 255, 0.25) !important;
+  border-right: none !important; 
 }
 
+/* 3. 🎯 القاعدة الحاسمة: إزالة الحد السفلي من البطاقة رقم 8 وما يليها فقط */
+/* هذا يستهدف العناصر (8 و 9) ويزيل الحد السفلي منها، تاركًا الحد تحت (7) كما هو. */
+.grid-features > div:nth-child(n + 8) { 
+  border-bottom: none !important; 
+}
+
+/* 4. معالجة عنصر الصورة (البطاقة رقم 9) للتأكد */
+.grid-features > .illustration {
+  border: none !important; /* يزيل جميع الحدود */
+  padding: 0; 
+}
+/* حل الطوارئ: استهداف البطاقة رقم 7 مباشرة بالـ nth-child */
+.grid-features > div:nth-child(7) {
+  border-bottom: 0.03125rem solid rgba(255, 255, 255, 0.25) !important;
+}
 .feature-card .icon-feature {
   width: 3rem;
   height: 3rem;
@@ -1709,6 +1753,8 @@ body {
 /* -------------------- Modal Styles -------------------- */
 
 /* الطبقة الخلفية (الشفافة التي تغطي الصفحة) */
+
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -1903,4 +1949,78 @@ input:focus, select:focus, textarea:focus {
   form > div:last-of-type:not(.twocol) {
       margin-bottom: 1rem;
   }
+}
+
+/* -------------------- Toast Notification -------------------- */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 400px;
+  word-wrap: break-word;
+}
+
+.toast-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-success {
+  background-color: #10b981; /* Green */
+}
+
+.toast-error {
+  background-color: #ef4444; /* Red */
+}
+
+@media (max-width: 768px) {
+  .toast {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    max-width: none;
+    font-size: 0.9rem;
+    padding: 0.875rem 1.25rem;
+  }
+}/* 1. الحالة الافتراضية (مخفية) */
+#demoModal {
+  /* أساسيات التوسيط في الشاشة */
+  display: none; /* يتم التحكم به بواسطة JavaScript عند الإغلاق */
+  opacity: 0; /* يبدأ شفافًا */
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* تطبيق حركة سلسة */
+  
+  /* ضبط أولي للتحجيم لإنشاء تأثير الظهور */
+  transform: scale(0.95);
+  
+  /* تأكد من أن الـ modal-backdrop يملأ الشاشة */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* تأكد أنه يظهر فوق كل شيء */
+  background-color: rgba(0, 0, 0, 0.5); /* خلفية داكنة */
+}
+
+/* 2. حالة الظهور (تُضاف عند الفتح) */
+#demoModal.is-visible {
+  opacity: 1; /* يصبح مرئيًا بالكامل */
+  transform: scale(1); /* يعود لحجمه الطبيعي */
+  display: flex; /* يُظهر الـ Modal كـ flex */
+}
+
+/* 3. تطبيق الحركة على مربع الـ Modal الداخلي لجعل الحركة أفضل */
+#demoModal .modal {
+  transition: transform 0.3s ease-out; 
+  /* يمكن إضافة حركة مختلفة على الـ modal الداخلي إذا أردت */
 }
